@@ -1,0 +1,49 @@
+:root {
+  --color-font1: #0078B8;
+  --color-font2: #E66A1F;
+  --color-border: #DBDBDB
+}
+
+$url: '@/assets/images/';
+
+@for $i from 0 to 501 {
+  $value: $i * 1px !important;
+  .mt#{$i} {margin-top: $value;}
+  .mr#{$i} {margin-right: $value;}
+  .mb#{$i} {margin-bottom: $value;}
+  .ml#{$i} {margin-left: $value;}
+
+  .pt#{$i} {padding-top: $value;}
+  .pr#{$i} {padding-right: $value;}
+  .pb#{$i} {padding-bottom: $value;}
+  .pl#{$i} {padding-left: $value;}
+
+  .width#{$i} {width: $value;}
+
+  .max_height#{$i} {max-height: $value;}
+
+  .popupCount#{$i} {
+    transform: translate($i * 10px, $i * 8px);
+  }
+}
+
+@mixin ellipsis ($clamp: 0) {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break: break-all;
+
+	@if $clamp !=0 {
+		display: -webkit-box;
+		word-wrap: break-word;
+		white-space: wrap;
+		-webkit-line-clamp: $clamp;
+		-webkit-box-orient: vertical;
+	}
+}
+
+:focus-visible {
+  outline: dashed 1px #555;
+  // outline-offset: -1px;
+}
+
